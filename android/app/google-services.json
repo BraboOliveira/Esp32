@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "579204333410",
+    "firebase_url": "https://esp32-cc1a8.firebaseio.com",
+    "project_id": "esp32-cc1a8",
+    "storage_bucket": "esp32-cc1a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579204333410:android:5b0f412b40d1cec0f4763b",
+        "android_client_info": {
+          "package_name": "com.appesp32"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579204333410-st1c1oq411m0vnaleer42lalhq4haeik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFuFV0D9zXAv2eWnqNx98Yddwdud9063s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579204333410-st1c1oq411m0vnaleer42lalhq4haeik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
