@@ -75,7 +75,7 @@ useEffect(() => {
         console.log('atualiza')
         setDados(dadosA)
     }
-    },[valor['luminosidade']]);
+    },[valor['luminosidade'], valor['nh3'],valor['temperatura'],valor['umidade']]);
 
     // setTimeout(()=>{
     //     database()
