@@ -4,8 +4,8 @@ import database, { firebase } from '@react-native-firebase/database';
  //import { Container } from './styles';
 
 const Home = () => {
-    const [valor, setValor] = useState([''])
-    const [dados, setDados] = useState([''])
+    const [valor, setValor] = useState([])
+    const [dados, setDados] = useState([])
     const [tempo, setTempo] = useState(2000)
     // useEffect(() => {
     //     async function loadStorageData(){
@@ -49,15 +49,10 @@ const Home = () => {
 useEffect(() => {
     const interval = setInterval( ()=>{
         firebase.database().ref('sensores/')
-        .once('value').then((snapshot) =>{
+        .on('value', snapshot =>{
             // console.log(snapshot.val())
             var sensorData =snapshot.val()
-            let valorVal = valor.luminosidade;
-            let valor2 = sensorData.luminosidade
-            if(valorVal!=valor2){
-                setValor(sensorData)   
-            };
-                
+            setValor(sensorData)     
              });
     },tempo)
     return () => clearInterval(interval);
@@ -65,22 +60,22 @@ useEffect(() => {
 
     useEffect(() => {
         console.log('teste')
-        if(valor.length > 0){
         let newDados = {
         luminosidade: valor.luminosidade,
         umidade:valor.umidade,
         temperatura:valor.temperatura,
         nh3: valor.nh3,
         }
-        let dadosA = Array.from(dados);
-        if(newDados.luminosidade!=''){
-            dadosA.push(newDados) 
-            console.log('atualiza')
-            setDados(dadosA)
-            //setDados([])
+        if(valor.length==0){
+            console.log('Vazio')
         }
-    }  
-    },[valor.luminosidade]);
+        else{
+        let dadosA = Array.from(dados);
+        dadosA.push(newDados) 
+        console.log('atualiza')
+        setDados(dadosA)
+    }
+    },[valor['luminosidade']]);
 
     // setTimeout(()=>{
     //     database()
